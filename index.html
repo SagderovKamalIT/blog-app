@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog app</title>
+
+    <link rel="stylesheet" href="styles/reset.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    
+
+    <main>
+            <div class="container ">
+                <div class="container__app">
+                    <h1 class="app__section-header">Приложение Блог</h1>
+                    <div class="app__section">
+                        <div class="app__collumn">
+                            <h2 class="app__header"> Новый пост</h2>
+                            <div class="blog__container">
+                    
+                                    <input
+                                    class= " js-app__input app__input"
+                                    type="text"
+                                    name="header"
+                                    placeholder="Заголовок"
+                                    />
+                    
+                                    <textarea
+                                    class="js-app__text  app__text"
+                                    type="text"
+                                    name="post"
+                                    placeholder="Напиши пост"
+                                    ></textarea>
+                    
+                                <button  class=" js-app__button app__button" >
+                                    Опубликовать
+                                </button>
+                                        <div
+                                        id="validationMessage"
+                                        class="validationMessage
+                                        validationMessage__hidden">
+                                     </div>
+                            </div>
+                        </div>
+
+                        <div class="app__collumn">
+                            <h2 class="app__header" >Лента
+                            </h2>
+                            <div class="js-posts posts">
+                                Лента пустая...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+    </main>
+
+    <script src="index.js" ></script>
+    
+</body>
+</html>

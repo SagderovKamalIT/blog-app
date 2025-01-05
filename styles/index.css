@@ -1,0 +1,117 @@
+body {
+  font-family: "Inter", serif;
+  width: 100%;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.container__app {
+  padding-top: 100px;
+}
+
+.app__section {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+.app__collumn {
+  width: calc(50% - 40px);
+  width: 500px;
+}
+
+.app__section-header {
+  font-weight: 700;
+  font-size: 45px;
+  margin-bottom: 45px;
+  text-align: center;
+  position: center;
+}
+
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.app__header {
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 60px;
+  
+}
+
+.blog__container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.app__input,
+.app__text {
+  box-sizing: border-box;
+  border: 1px solid #000;
+  font-weight: 400;
+  font-size: 32px;
+  padding: 11px 20px 10px 20px;
+}
+
+.app__text {
+  resize: vertical;
+  resize: none;
+}
+
+
+
+.app__button {
+  display: block;
+  margin: auto;
+  width: 100%;
+  font-weight: 400;
+  font-size: 32px;
+  padding: 10px 10px;
+  border: none;
+  color: #fff;
+  background-color: #0094ff;
+}
+
+
+.validationMessage {
+  color: red;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.validationMessage__hidden {
+  display: none;
+}
+
+.posts {
+  font-weight: 400;
+  font-size: 32px;
+  opacity: 0.6;
+}
+
+
+.post__title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.post__text {
+  margin-bottom: 35px;
+}
+
+.post__date {
+  font-size: 20px;
+  line-height: 30px;
+  color: blue;
+}
