@@ -1,7 +1,7 @@
 const posts = [];
 
-const TITLE__VALIDATION__LIMIT = 10;
-const TEXT__VALIDATION__LIMIT = 20;
+const TITLE__VALIDATION__LIMIT = 35;
+const TEXT__VALIDATION__LIMIT = 100;
 
 // document.querySelector - позволяет достать элемент из html и уже работать с ним
 const titleInputNode = document.querySelector('.js-app__input');
@@ -23,11 +23,12 @@ newPostBtnNode.addEventListener('click', function() {
 
 
 // можно прописать таким образом, прописав просто название функции
-titleInputNode.addEventListener('input', validation);
+titleInputNode.addEventListener('input', validation, validationBtn);
 
 // либо же прописать полностью для лучшей читаемости
 textInputNode.addEventListener('input', function () {
     validation()
+    validationBtn()
 });
 
 function validation() {
@@ -50,7 +51,22 @@ function validation() {
     validationMessage.classList.add('validationMessage__hidden');
 }
 
+function validationBtn() {
+    const titlelen = titleInputNode.value.length;
+    const textlen = textInputNode.value.length;
 
+    if (titlelen > TITLE__VALIDATION__LIMIT || textlen > TEXT__VALIDATION__LIMIT) {
+        newPostBtnNode.setAttribute('disabled', 'true');
+        // свойство classList - позволяет добавлять и удалять классы 
+        newPostBtnNode.classList.add('disabled');
+    } else {
+        newPostBtnNode.removeAttribute('disabled');
+        newPostBtnNode.classList.remove('disabled');
+    }
+}
+
+titleInputNode.addEventListener('input', validationBtn);
+textInputNode.addEventListener('input', validationBtn);
 
 
 
@@ -64,9 +80,18 @@ function getPostFromUser() {
     };
 }
 
-function addPost({title, text}) {
+function addPost({title, text,}) {
  const currentDate = new Date();
- const dt = `${currentDate.getHours()}:${currentDate.getMinutes()}`;
+
+ // отображение времени с помощью метода toLocaleString, который автоматически подстраивает время под регион 
+ const dt = currentDate.toLocaleString('ru-RU', {
+    hour: '2-digit',
+    minute: '2-digit',
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+});
+
  posts.push({
     dt,
     title: title,
